@@ -15,14 +15,14 @@ script:
   - docker build -t udagram-reverseproxy ./udagram-reverseproxy
 
   # Tag the Docker images
-  - docker tag udagram-api-feed azeemahraji/udagram-api-feed:v1
-  - docker tag udagram-api-user azeemahraji/udagram-api-user:v1
-  - docker tag udagram-frontend azeemahraji/udagram-frontend:v1
-  - docker tag udagram-reverseproxy azeemahraji/udagram-reverseproxy:v1
+  - docker tag udagram-api-feed azeemahraji/udagram-api-feed:v2
+  - docker tag udagram-api-user azeemahraji/udagram-api-user:v2
+  - docker tag udagram-frontend azeemahraji/udagram-frontend:v2
+  - docker tag udagram-reverseproxy azeemahraji/udagram-reverseproxy:v2
 
 after_success:
   # Push the Docker images to Docker Hub
-  - docker push azeemahraji/udagram-api-feed:v1
-  - docker push azeemahraji/udagram-api-user:v1
-  - docker push azeemahraji/udagram-frontend:v1
-  - docker push azeemahraji/udagram-reverseproxy:v1
+  - docker push azeemahraji/udagram-api-feed:v2
+  - docker push azeemahraji/udagram-api-user:v2
+  - docker push azeemahraji/udagram-frontend:v2
+  - docker push azeemahraji/udagram-reverseproxy:v2

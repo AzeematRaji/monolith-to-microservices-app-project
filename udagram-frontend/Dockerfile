@@ -1,5 +1,5 @@
 # Use Node.js image
-FROM node:16
+FROM node:16 AS ionic
 
 # Install Ionic CLI
 RUN npm install -g ionic

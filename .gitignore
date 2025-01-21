@@ -44,3 +44,5 @@ venv/
 
 
 udagram-api/
+
+set_env.sh

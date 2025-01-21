@@ -1,5 +1,5 @@
 # Use Node.js image
-FROM node:16 AS ionic
+FROM node:16
 
 # Install Ionic CLI
 RUN npm install -g ionic
@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 
 # Install app dependencies
 COPY package*.json ./
-RUN npm ci
+RUN npm install --force --optional
 
 # Copy app source
 COPY . .

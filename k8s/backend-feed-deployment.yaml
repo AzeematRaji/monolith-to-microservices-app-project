@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: backend-feed-deployment
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: backend-feed
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend-feed
-          image: azeemahraji/udagram-api-feed:v1
+          image: azeemahraji/udagram-api-feed:v2
           ports:
             - containerPort: 8080
           envFrom:

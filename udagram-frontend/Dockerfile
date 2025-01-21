@@ -1,15 +1,25 @@
-### Build
-FROM beevelop/ionic:5.4.16 AS ionic
-## Create app directory
+# Use Node.js image
+FROM node:16 AS ionic
+
+# Install Ionic CLI
+RUN npm install -g ionic
+
+# Create app directory
 WORKDIR /usr/src/app
-## Install app dependencies
-## A wildcard is used to ensure both package.json AND package-lock.json are copied
+
+# Install app dependencies
 COPY package*.json ./
 RUN npm ci
-## Bundle app source
+
+# Copy app source
 COPY . .
+
+# Build the app
 RUN ionic build
+
 ### Run 
 FROM nginx:alpine
 #COPY www /usr/share/nginx/html
 COPY --from=ionic  /usr/src/app/www /usr/share/nginx/html
+
+
